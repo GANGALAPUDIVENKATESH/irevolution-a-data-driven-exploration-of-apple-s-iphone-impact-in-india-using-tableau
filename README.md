@@ -123,6 +123,9 @@ Key economic metrics: manufacturing jobs, export revenue, Apple Stores, service 
 
 ---
 
+
+![image alt](https://github.com/GANGALAPUDIVENKATESH/irevolution-a-data-driven-exploration-of-apple-s-iphone-impact-in-india-using-tableau/blob/57b1fe614653cdc72901527db2787a1ffc2de4ae/Screenshot%202026-05-01%20153328.png)
+
 ## 🛠️ Technology Stack
 
 | Component | Technology |
