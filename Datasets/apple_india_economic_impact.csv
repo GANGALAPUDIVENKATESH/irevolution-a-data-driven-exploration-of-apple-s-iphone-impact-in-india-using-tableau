@@ -1,0 +1,41 @@
+Year,Metric,Value,Unit,Notes
+2017,Manufacturing_Jobs_Created,0,Thousands,No local manufacturing
+2018,Manufacturing_Jobs_Created,0,Thousands,No local manufacturing
+2019,Manufacturing_Jobs_Created,2.5,Thousands,Foxconn begins pilot
+2020,Manufacturing_Jobs_Created,8.2,Thousands,iPhone SE 2 assembled in India
+2021,Manufacturing_Jobs_Created,22.5,Thousands,PLI scheme begins
+2022,Manufacturing_Jobs_Created,45.8,Thousands,Expansion under PLI
+2023,Manufacturing_Jobs_Created,78.3,Thousands,Major scale-up
+2024,Manufacturing_Jobs_Created,112.6,Thousands,iPhone 15/16 assembled in India
+2017,Export_Revenue_USD_Million,0,USD Million,No exports
+2018,Export_Revenue_USD_Million,0,USD Million,No exports
+2019,Export_Revenue_USD_Million,45,USD Million,Initial export trials
+2020,Export_Revenue_USD_Million,180,USD Million,Exports to Europe and Middle East
+2021,Export_Revenue_USD_Million,620,USD Million,Significant export growth
+2022,Export_Revenue_USD_Million,1850,USD Million,India becomes export hub
+2023,Export_Revenue_USD_Million,5000,USD Million,Record exports
+2024,Export_Revenue_USD_Million,8500,USD Million,Projected record high
+2017,Apple_Store_Count_India,0,Count,No Apple Stores
+2018,Apple_Store_Count_India,0,Count,No Apple Stores
+2019,Apple_Store_Count_India,0,Count,No Apple Stores
+2020,Apple_Store_Count_India,0,Count,No Apple Stores
+2021,Apple_Store_Count_India,0,Count,No Apple Stores
+2022,Apple_Store_Count_India,0,Count,No Apple Stores
+2023,Apple_Store_Count_India,2,Count,Mumbai and Delhi stores opened
+2024,Apple_Store_Count_India,4,Count,Expansion to Bengaluru and Pune
+2017,Service_Centers,250,Count,Authorized Service Providers
+2018,Service_Centers,280,Count,Authorized Service Providers
+2019,Service_Centers,320,Count,Authorized Service Providers
+2020,Service_Centers,380,Count,Authorized Service Providers
+2021,Service_Centers,450,Count,Authorized Service Providers
+2022,Service_Centers,520,Count,Authorized Service Providers
+2023,Service_Centers,620,Count,Authorized Service Providers
+2024,Service_Centers,750,Count,Authorized Service Providers
+2017,iPhone_India_Tax_Rate_Percent,28.85,Percent,GST + Import Duty
+2018,iPhone_India_Tax_Rate_Percent,28.85,Percent,GST + Import Duty
+2019,iPhone_India_Tax_Rate_Percent,28.85,Percent,GST + Import Duty
+2020,iPhone_India_Tax_Rate_Percent,20.0,Percent,Reduced for local assembly
+2021,iPhone_India_Tax_Rate_Percent,18.5,Percent,PLI incentives
+2022,iPhone_India_Tax_Rate_Percent,18.5,Percent,PLI incentives
+2023,iPhone_India_Tax_Rate_Percent,18.5,Percent,PLI incentives
+2024,iPhone_India_Tax_Rate_Percent,18.5,Percent,PLI incentives
