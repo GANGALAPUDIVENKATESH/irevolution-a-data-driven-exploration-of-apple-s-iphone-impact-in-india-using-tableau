@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tableau Implementation Guide — iRevolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .guide-hero {
+      padding: 120px 2rem 60px;
+      text-align: center;
+      background: radial-gradient(ellipse at center, rgba(0,113,227,0.08) 0%, transparent 70%);
+    }
+    .guide-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+    .step-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--apple-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--apple-white);
+      margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--apple-silver);
+      line-height: 1.7;
+    }
+    code {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 0.15rem 0.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      color: #60a5fa;
+    }
+    pre {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #a8b4c8;
+    }
+    .workbook-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .wb-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .wb-icon { font-size: 1.5rem; }
+    .wb-name { font-weight: 600; color: var(--apple-white); font-size: 0.95rem; }
+    .wb-file { font-size: 0.75rem; color: var(--apple-blue); font-family: monospace; }
+    .wb-desc { font-size: 0.85rem; color: var(--apple-silver); margin-bottom: 1rem; }
+    .wb-charts { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .chip {
+      background: rgba(0,113,227,0.1);
+      border: 1px solid rgba(0,113,227,0.2);
+      color: #60a5fa;
+      padding: 0.2rem 0.65rem;
+      border-radius: 980px;
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+    h2 { color: var(--apple-white); margin: 3rem 0 1.5rem; font-family: var(--font-display); }
+    h3 { color: var(--apple-white); margin: 2rem 0 1rem; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <span class="nav-logo-text">← Back to Dashboard</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#workbooks">Workbooks</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#calculations">Calculations</a></li>
+  </ul>
+</nav>
+
+<div class="guide-hero">
+  <div class="section-tag">📊 Tableau Implementation</div>
+  <h1 style="font-family: var(--font-display); color: var(--apple-white); margin: 1rem 0;">
+    Building the Dashboards
+  </h1>
+  <p style="color: var(--apple-silver); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+    Step-by-step guide to recreating the iRevolution Tableau workbooks from the datasets provided.
+  </p>
+</div>
+
+<div class="guide-content">
+
+  <!-- WORKBOOKS -->
+  <h2 id="workbooks">🗂️ The 5 Tableau Workbooks</h2>
+
+  <div class="workbook-card">
+    <div class="wb-header">
+      <span class="wb-icon">📈</span>
+      <div>
+        <div class="wb-name">Dashboard 1 — Sales Trend Analysis</div>
+        <div class="wb-file">dash_01_sales_trend.twbx</div>
+      </div>
+    </div>
+    <div class="wb-desc">Primary sales performance dashboard showing unit volumes, revenue trends, and quarterly patterns from 2017–2024. The core narrative of Apple's growth story.</div>
+    <div class="wb-charts">
+      <span class="chip">Dual-Axis Line Chart</span>
+      <span class="chip">Bar Chart (Quarterly)</span>
+      <span class="chip">KPI Summary Cards</span>
+      <span class="chip">Year-over-Year Growth</span>
+      <span class="chip">Model Performance Table</span>
+    </div>
+  </div>
+
+  <div class="workbook-card">
+    <div class="wb-header">
+      <span class="wb-icon">🗺️</span>
+      <div>
+        <div class="wb-name">Dashboard 2 — Regional Heatmap</div>
+        <div class="wb-file">dash_02_regional.twbx</div>
+      </div>
+    </div>
+    <div class="wb-desc">Geographic distribution of iPhone adoption across Indian states. Uses Tableau's built-in India geographic roles for filled map visualization.</div>
+    <div class="wb-charts">
+      <span class="chip">Filled Map (India States)</span>
+      <span class="chip">Bubble Map</span>
+      <span class="chip">Penetration Rate Chart</span>
+      <span class="chip">Region Filter</span>
+      <span class="chip">Year Slider</span>
+    </div>
+  </div>
+
+  <div class="workbook-card">
+    <div class="wb-header">
+      <span class="wb-icon">👥</span>
+      <div>
+        <div class="wb-name">Dashboard 3 — Consumer Demographics</div>
+        <div class="wb-file">dash_03_demographics.twbx</div>
+      </div>
+    </div>
+    <div class="wb-desc">Who is buying iPhones in India? Age distribution, income segments, gender split, purchase channels, and satisfaction metrics.</div>
+    <div class="wb-charts">
+      <span class="chip">Stacked Bar Chart</span>
+      <span class="chip">Treemap</span>
+      <span class="chip">Scatter Plot</span>
+      <span class="chip">Pie Chart</span>
+      <span class="chip">Cross-tab Analysis</span>
+    </div>
+  </div>
+
+  <div class="workbook-card">
+    <div class="wb-header">
+      <span class="wb-icon">🏭</span>
+      <div>
+        <div class="wb-name">Dashboard 4 — Economic Impact</div>
+        <div class="wb-file">dash_04_economics.twbx</div>
+      </div>
+    </div>
+    <div class="wb-desc">Apple's contribution to India's economy: manufacturing jobs, export revenue, PLI scheme impact, service center growth and tax revenue.</div>
+    <div class="wb-charts">
+      <span class="chip">Combo Chart</span>
+      <span class="chip">Timeline</span>
+      <span class="chip">Waterfall Chart</span>
+      <span class="chip">Reference Lines</span>
+      <span class="chip">Annotations</span>
+    </div>
+  </div>
+
+  <div class="workbook-card">
+    <div class="wb-header">
+      <span class="wb-icon">🔮</span>
+      <div>
+        <div class="wb-name">Dashboard 5 — Forecast 2025–2027</div>
+        <div class="wb-file">dash_05_forecast.twbx</div>
+      </div>
+    </div>
+    <div class="wb-desc">Predictive analysis using Tableau's built-in forecasting engine. Projects iPhone sales, market share, and export revenue through 2027.</div>
+    <div class="wb-charts">
+      <span class="chip">Forecast Chart</span>
+      <span class="chip">Confidence Intervals</span>
+      <span class="chip">Trend Lines</span>
+      <span class="chip">Parameter Controls</span>
+      <span class="chip">Scenario Analysis</span>
+    </div>
+  </div>
+
+  <!-- SETUP -->
+  <h2 id="setup">⚙️ Setup Instructions</h2>
+
+  <div class="step-card">
+    <div class="step-number">1</div>
+    <div>
+      <div class="step-title">Connect Data Sources</div>
+      <div class="step-desc">
+        Open Tableau Desktop. Go to <strong>Connect → Text File</strong> and load each CSV from the <code>datasets/</code> folder:
+        <ul style="margin-top: 0.75rem; padding-left: 1.5rem; color: var(--apple-silver);">
+          <li><code>iphone_india_sales.csv</code> — Primary sales data</li>
+          <li><code>india_smartphone_market_share.csv</code> — Competitive market data</li>
+          <li><code>regional_adoption_india.csv</code> — Geographic data</li>
+          <li><code>consumer_demographics.csv</code> — Consumer insights</li>
+          <li><code>apple_india_economic_impact.csv</code> — Economic metrics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-number">2</div>
+    <div>
+      <div class="step-title">Create Data Relationships</div>
+      <div class="step-desc">
+        In the Data Source tab, create relationships between the tables using the <code>Year</code> field as the common key. Use <strong>Inner Join</strong> for cross-table analysis or keep separate data sources for independent dashboards.
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-number">3</div>
+    <div>
+      <div class="step-title">Set Geographic Roles</div>
+      <div class="step-desc">
+        For <code>regional_adoption_india.csv</code>: Right-click the <code>State</code> field → Geographic Role → State/Province. Right-click <code>Region</code> field → Geographic Role → Custom. This enables the India map visualizations.
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-number">4</div>
+    <div>
+      <div class="step-title">Configure Date Hierarchy</div>
+      <div class="step-desc">
+        The <code>Year</code> and <code>Quarter</code> fields in sales data should be combined. Create a calculated field:
+        <pre><code>MAKEDATE([Year], 
+  CASE [Quarter]
+    WHEN 'Q1' THEN 1
+    WHEN 'Q2' THEN 4
+    WHEN 'Q3' THEN 7
+    WHEN 'Q4' THEN 10
+  END, 1)</code></pre>
+        Name it <code>Quarter Date</code> and set data type to Date.
+      </div>
+    </div>
+  </div>
+
+  <!-- CALCULATIONS -->
+  <h2 id="calculations">🧮 Key Calculated Fields</h2>
+
+  <h3>YoY Growth Rate</h3>
+  <pre><code>// Units Sold YoY Growth
+(SUM([Units_Sold_Millions]) - LOOKUP(SUM([Units_Sold_Millions]), -1)) 
+  / ABS(LOOKUP(SUM([Units_Sold_Millions]), -1))</code></pre>
+  <p style="font-size: 0.85rem; color: var(--apple-silver); margin-bottom: 1.5rem;">Format as Percentage. Use in KPI cards to show growth vs prior year.</p>
+
+  <h3>Market Share Rank</h3>
+  <pre><code>// Apple's rank among brands for a given year
+RANK(SUM([Market_Share_Percent]), 'desc')</code></pre>
+
+  <h3>Revenue Per Unit (ASP)</h3>
+  <pre><code>// Average Selling Price validation
+SUM([Revenue_USD_Billion]) * 1000 / SUM([Units_Sold_Millions])</code></pre>
+
+  <h3>Penetration Index</h3>
+  <pre><code>// Normalized penetration vs national average
+[Penetration_Rate_Percent] / 
+  WINDOW_AVG(AVG([Penetration_Rate_Percent]))</code></pre>
+
+  <h3>Cumulative Sales</h3>
+  <pre><code>// Running total of units sold
+RUNNING_SUM(SUM([Units_Sold_Millions]))</code></pre>
+
+  <h2>🎨 Dashboard Design Specifications</h2>
+  <div class="step-card">
+    <div class="step-number" style="background: #1d1d1f; border: 1px solid rgba(255,255,255,0.1);">🎨</div>
+    <div>
+      <div class="step-title">Color Theme — Apple Dark</div>
+      <div class="step-desc">
+        Use these hex codes for consistent theming across all dashboards:
+        <ul style="margin-top: 0.75rem; padding-left: 1.5rem; color: var(--apple-silver); font-family: monospace; font-size: 0.82rem;">
+          <li>Background: <code>#1d1d1f</code></li>
+          <li>Primary Blue: <code>#0071e3</code></li>
+          <li>India Saffron: <code>#FF9933</code></li>
+          <li>India Green: <code>#138808</code></li>
+          <li>Text Primary: <code>#f5f5f7</code></li>
+          <li>Text Secondary: <code>#86868b</code></li>
+          <li>Grid Lines: <code>#2d2d2f</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-number">📐</div>
+    <div>
+      <div class="step-title">Dashboard Sizing</div>
+      <div class="step-desc">
+        Set all dashboards to <strong>Fixed Size: 1440 × 900 px</strong> for consistent presentation. For Tableau Public publishing, use Automatic sizing. Font: Use <code>Tableau Book</code> or <code>Calibri</code> (closest available to DM Sans in Tableau).
+      </div>
+    </div>
+  </div>
+
+  <h2>📤 Publishing to Tableau Public</h2>
+  <div class="step-card">
+    <div class="step-number">↑</div>
+    <div>
+      <div class="step-title">Server → Tableau Public → Save to Tableau Public</div>
+      <div class="step-desc">
+        Ensure all data is embedded in the workbook (not live connection). Go to <strong>Data → [Data Source Name] → Extract Data</strong> before publishing. The embed code from Tableau Public can be pasted into the <code>tableau-embed-frame</code> div in index.html for live embedding.
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 4rem;">
+    <a href="../index.html" class="btn-primary">← Back to Main Dashboard</a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p class="footer-copy">iRevolution Tableau Implementation Guide · Academic Reference Only</p>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
