@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="iRevolution: A data-driven exploration of Apple's iPhone impact in India using Tableau" />
+  <title>iRevolution — iPhone Impact in India</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/charts.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar">
+  <a href="#" class="nav-logo">
+    <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <path d="M16 6 L22 12 L22 20 C22 22.2 20.2 24 18 24 L14 24 C11.8 24 10 22.2 10 20 L10 12 Z" fill="#FF9933" opacity="0.8"/>
+      <circle cx="19" cy="9" r="2" fill="#0071e3"/>
+    </svg>
+    <span class="nav-logo-text">i<span>Revolution</span></span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#market">Market Share</a></li>
+    <li><a href="#regional">Regional</a></li>
+    <li><a href="#economics">Economics</a></li>
+    <li><a href="#insights">Insights</a></li>
+    <li><a href="tableau_workbooks/irevolution_guide.html" class="nav-cta">Tableau Guide</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>🇮🇳</span>
+      <span>Data-Driven Analysis · 2017–2024</span>
+    </div>
+
+    <h1 class="hero-title">
+      i<span class="accent">Revolution</span><br/>
+      iPhone's India Story
+    </h1>
+
+    <p class="hero-subtitle">
+      A comprehensive Tableau-powered exploration of how Apple transformed India's smartphone landscape — from niche luxury to mainstream powerhouse.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">
+          <span data-count="8.2" data-suffix="%" data-decimals="1">8.2%</span>
+        </span>
+        <span class="hero-stat-label">Market Share 2024</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">
+          <span data-count="11.31" data-suffix="M" data-decimals="1">11.31M</span>
+        </span>
+        <span class="hero-stat-label">Units Sold 2024</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">
+          <span data-count="112.6" data-suffix="K" data-decimals="0">112K</span>
+        </span>
+        <span class="hero-stat-label">Manufacturing Jobs</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">$<span data-count="8.5" data-suffix="B" data-decimals="1">8.5B</span>
+        </span>
+        <span class="hero-stat-label">Export Revenue</span>
+      </div>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="#overview" class="btn-primary">
+        <span>Explore Data</span>
+        <span>↓</span>
+      </a>
+      <a href="tableau_workbooks/irevolution_guide.html" class="btn-secondary">
+        <span>📊</span>
+        <span>Tableau Workbooks</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== KPI SECTION ==================== -->
+<section id="overview" style="padding-top: 4rem;">
+  <div class="section-header">
+    <div class="section-tag">Key Metrics</div>
+    <h2 class="section-title">iPhone India — By The Numbers</h2>
+    <p class="section-desc">Eight years of exponential growth captured in the most critical data points.</p>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-icon">📈</div>
+      <div class="kpi-value" data-count="731" data-suffix="%" data-decimals="0">731%</div>
+      <div class="kpi-label">Sales Growth 2017–2024</div>
+      <div class="kpi-change">↑ 8.2× increase in volume</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">💰</div>
+      <div class="kpi-value">₹79,900</div>
+      <div class="kpi-label">Starting Price iPhone 16 India</div>
+      <div class="kpi-change">↓ 18% PLI tax benefit</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">🏭</div>
+      <div class="kpi-value" data-count="40" data-suffix="%" data-decimals="0">40%</div>
+      <div class="kpi-label">iPhones Assembled in India (2024)</div>
+      <div class="kpi-change">↑ From 0% in 2019</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">🏪</div>
+      <div class="kpi-value" data-count="4" data-suffix=" Stores" data-decimals="0">4 Stores</div>
+      <div class="kpi-label">Official Apple Retail Stores</div>
+      <div class="kpi-change">↑ Mumbai, Delhi, Bengaluru, Pune</div>
+    </div>
+  </div>
+
+  <!-- Main Sales Chart -->
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <div class="chart-title">Annual iPhone Sales in India</div>
+    <div class="chartjs-wrapper" style="height: 320px;">
+      <canvas id="yearlySalesChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Quarterly + Donut Row -->
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+    <div class="card">
+      <div class="chart-title">Quarterly Sales Breakdown (2017–2024)</div>
+      <div class="chartjs-wrapper" style="height: 260px;">
+        <canvas id="quarterlyChart"></canvas>
+      </div>
+      <p style="font-size: 0.75rem; margin-top: 0.75rem; color: rgba(134,134,139,0.7);">
+        🟠 Orange = 2023–2024 | 🔵 Blue = 2021–2022 | Light blue = 2017–2020
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="chart-title">2024 Brand Market Share</div>
+      <div class="chartjs-wrapper" style="height: 260px;">
+        <canvas id="marketShareDonut"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MARKET SECTION ==================== -->
+<section id="market" style="border-top: 1px solid rgba(255,255,255,0.04); padding-top: 6rem;">
+  <div class="section-header">
+    <div class="section-tag">Competitive Landscape</div>
+    <h2 class="section-title">Winning the Premium Battle</h2>
+    <p class="section-desc">Apple's relentless climb through India's competitive smartphone hierarchy.</p>
+  </div>
+
+  <!-- Top Models Table -->
+  <div class="card" style="margin-bottom: 3rem;">
+    <div class="chart-title">Best Performing iPhone Models in India</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Launch Price (USD)</th>
+          <th>Peak Units Sold</th>
+          <th>Market Position</th>
+        </tr>
+      </thead>
+      <tbody id="modelTableBody">
+        <!-- Filled by JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Market Share Over Time + Competitive Stats -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+    <div class="card">
+      <div class="chart-title">Apple vs Competitors — 2024 Share</div>
+      <div class="bar-chart-css" id="regionalBars" style="margin-top: 0;">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="chart-title">Brand Loyalty Metrics (2024)</div>
+      <div class="comparison-bar">
+        <div class="comparison-row">
+          <span class="comp-label">Apple</span>
+          <div class="comp-bar-wrap">
+            <div class="comp-bar-bg">
+              <div class="comp-bar-fill" style="width: 85%; background: #0071e3;"></div>
+            </div>
+            <span class="comp-val">85%</span>
+          </div>
+        </div>
+        <div class="comparison-row">
+          <span class="comp-label">Samsung</span>
+          <div class="comp-bar-wrap">
+            <div class="comp-bar-bg">
+              <div class="comp-bar-fill" style="width: 62%; background: #1428A0;"></div>
+            </div>
+            <span class="comp-val">62%</span>
+          </div>
+        </div>
+        <div class="comparison-row">
+          <span class="comp-label">Xiaomi</span>
+          <div class="comp-bar-wrap">
+            <div class="comp-bar-bg">
+              <div class="comp-bar-fill" style="width: 48%; background: #FF6900;"></div>
+            </div>
+            <span class="comp-val">48%</span>
+          </div>
+        </div>
+        <div class="comparison-row">
+          <span class="comp-label">OnePlus</span>
+          <div class="comp-bar-wrap">
+            <div class="comp-bar-bg">
+              <div class="comp-bar-fill" style="width: 71%; background: #EB0028;"></div>
+            </div>
+            <span class="comp-val">71%</span>
+          </div>
+        </div>
+        <div class="comparison-row">
+          <span class="comp-label">Oppo</span>
+          <div class="comp-bar-wrap">
+            <div class="comp-bar-bg">
+              <div class="comp-bar-fill" style="width: 44%; background: #1E1E1E;"></div>
+            </div>
+            <span class="comp-val">44%</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <div class="chart-title">Online vs Offline Sales Split (2024)</div>
+        <div class="comparison-bar">
+          <div class="comparison-row">
+            <span class="comp-label">Online</span>
+            <div class="comp-bar-wrap">
+              <div class="comp-bar-bg">
+                <div class="comp-bar-fill" style="width: 70%; background: linear-gradient(90deg, #0071e3, #00a2ff);"></div>
+              </div>
+              <span class="comp-val">70%</span>
+            </div>
+          </div>
+          <div class="comparison-row">
+            <span class="comp-label">Offline</span>
+            <div class="comp-bar-wrap">
+              <div class="comp-bar-bg">
+                <div class="comp-bar-fill" style="width: 30%; background: linear-gradient(90deg, #FF9933, #FF6600);"></div>
+              </div>
+              <span class="comp-val">30%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REGIONAL SECTION ==================== -->
+<section id="regional" style="border-top: 1px solid rgba(255,255,255,0.04); padding-top: 6rem;">
+  <div class="section-header">
+    <div class="section-tag">Geographic Analysis</div>
+    <h2 class="section-title">India's iPhone Map</h2>
+    <p class="section-desc">Metro cities lead, but Tier-2 adoption is accelerating.</p>
+  </div>
+
+  <div class="india-map-section">
+    <!-- Map Visualization -->
+    <div>
+      <div class="chart-title">State-wise iPhone Penetration (2024)</div>
+      <svg viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:420px;">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Simplified India Map Outline -->
+        <path d="M180 40 L220 35 L260 55 L290 80 L310 110 L320 150 L315 180 L330 210 L320 250 L300 280 L280 310 L260 340 L240 370 L220 400 L210 420 L200 410 L190 380 L170 350 L150 320 L135 290 L120 260 L110 230 L100 200 L105 170 L95 145 L100 120 L120 95 L140 70 Z"
+          fill="rgba(0,113,227,0.08)" stroke="rgba(0,113,227,0.3)" stroke-width="1.5"/>
+
+        <!-- State Dots -->
+        <!-- Maharashtra (Mumbai) -->
+        <circle cx="155" cy="280" r="18" fill="rgba(0,113,227,0.2)" stroke="#0071e3" stroke-width="1.5" filter="url(#glow)"/>
+        <circle cx="155" cy="280" r="8" fill="#0071e3"/>
+        <text x="155" y="308" text-anchor="middle" fill="#86868b" font-size="9" font-family="DM Sans">Maharashtra</text>
+        <text x="155" y="319" text-anchor="middle" fill="#FF9933" font-size="9" font-family="DM Sans" font-weight="bold">9.2%</text>
+
+        <!-- Delhi -->
+        <circle cx="185" cy="120" r="20" fill="rgba(255,153,51,0.2)" stroke="#FF9933" stroke-width="1.5" filter="url(#glow)"/>
+        <circle cx="185" cy="120" r="9" fill="#FF9933"/>
+        <text x="185" y="148" text-anchor="middle" fill="#86868b" font-size="9" font-family="DM Sans">Delhi</text>
+        <text x="185" y="159" text-anchor="middle" fill="#FF9933" font-size="9" font-family="DM Sans" font-weight="bold">10.1%</text>
+
+        <!-- Karnataka (Bengaluru) -->
+        <circle cx="180" cy="360" r="15" fill="rgba(52,211,153,0.2)" stroke="#34d399" stroke-width="1.5" filter="url(#glow)"/>
+        <circle cx="180" cy="360" r="7" fill="#34d399"/>
+        <text x="180" y="382" text-anchor="middle" fill="#86868b" font-size="9" font-family="DM Sans">Karnataka</text>
+        <text x="180" y="393" text-anchor="middle" fill="#34d399" font-size="9" font-family="DM Sans" font-weight="bold">8.5%</text>
+
+        <!-- Tamil Nadu -->
+        <circle cx="200" cy="410" r="13" fill="rgba(139,92,246,0.2)" stroke="#8B5CF6" stroke-width="1.5"/>
+        <circle cx="200" cy="410" r="6" fill="#8B5CF6"/>
+        <text x="200" y="430" text-anchor="middle" fill="#86868b" font-size="9" font-family="DM Sans">Tamil Nadu</text>
+        <text x="200" y="441" text-anchor="middle" fill="#8B5CF6" font-size="9" font-family="DM Sans" font-weight="bold">7.2%</text>
+
+        <!-- Gujarat -->
+        <circle cx="115" cy="235" r="13" fill="rgba(236,72,153,0.2)" stroke="#EC4899" stroke-width="1.5"/>
+        <circle cx="115" cy="235" r="6" fill="#EC4899"/>
+        <text x="85" y="230" text-anchor="middle" fill="#86868b" font-size="9" font-family="DM Sans">Gujarat</text>
+        <text x="85" y="241" text-anchor="middle" fill="#EC4899" font-size="9" font-family="DM Sans" font-weight="bold">6.4%</text>
+
+        <!-- West Bengal -->
+        <circle cx="280" cy="220" r="12" fill="rgba(245,158,11,0.2)" stroke="#F59E0B" stroke-width="1.5"/>
+        <circle cx="280" cy="220" r="5" fill="#F59E0B"/>
+        <text x="310" y="215" text-anchor="middle" fill="#86868b" font-size="9" font-family="DM Sans">W. Bengal</text>
+        <text x="310" y="226" text-anchor="middle" fill="#F59E0B" font-size="9" font-family="DM Sans" font-weight="bold">5.6%</text>
+
+        <!-- UP -->
+        <circle cx="220" cy="155" r="12" fill="rgba(239,68,68,0.2)" stroke="#EF4444" stroke-width="1.5"/>
+        <circle cx="220" cy="155" r="5" fill="#EF4444"/>
+        <text x="250" y="150" text-anchor="middle" fill="#86868b" font-size="9" font-family="DM Sans">Uttar Pradesh</text>
+        <text x="250" y="161" text-anchor="middle" fill="#EF4444" font-size="9" font-family="DM Sans" font-weight="bold">3.4%</text>
+
+        <!-- Legend -->
+        <text x="30" y="460" fill="#86868b" font-size="8" font-family="DM Sans">Circle size = iPhone user base</text>
+        <text x="30" y="472" fill="#86868b" font-size="8" font-family="DM Sans">% = penetration rate</text>
+      </svg>
+    </div>
+
+    <!-- Regional Stats -->
+    <div>
+      <div class="chart-title">State-wise Analysis</div>
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="kpi-card" style="padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--apple-white);">Delhi NCR</span>
+            <span class="badge badge-saffron">Highest Penetration</span>
+          </div>
+          <p style="font-size: 0.8rem;">10.1% penetration rate — India's highest. Premium income + tech-savvy professionals drive demand.</p>
+        </div>
+
+        <div class="kpi-card" style="padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--apple-white);">Maharashtra</span>
+            <span class="badge badge-blue">Largest Market</span>
+          </div>
+          <p style="font-size: 0.8rem;">5.65 million users — India's largest iPhone market driven by Mumbai's financial sector.</p>
+        </div>
+
+        <div class="kpi-card" style="padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--apple-white);">Karnataka</span>
+            <span class="badge badge-green">Tech Capital</span>
+          </div>
+          <p style="font-size: 0.8rem;">Bengaluru's IT sector makes Karnataka India's fastest-growing iPhone market since 2021.</p>
+        </div>
+
+        <div class="kpi-card" style="padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--apple-white);">Uttar Pradesh</span>
+            <span class="badge badge-saffron">Emerging Market</span>
+          </div>
+          <p style="font-size: 0.8rem;">3.65M users despite low 3.4% penetration — enormous growth potential in Tier-2 cities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ECONOMICS SECTION ==================== -->
+<section id="economics" style="border-top: 1px solid rgba(255,255,255,0.04); padding-top: 6rem;">
+  <div class="section-header">
+    <div class="section-tag">Economic Impact</div>
+    <h2 class="section-title">Beyond Sales — The Bigger Picture</h2>
+    <p class="section-desc">Apple's India strategy is reshaping manufacturing, employment and exports.</p>
+  </div>
+
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <div class="chart-title">Manufacturing Jobs Created & Export Revenue (2019–2024)</div>
+    <div class="chartjs-wrapper" style="height: 320px;">
+      <canvas id="economicChart"></canvas>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+    <div class="kpi-card">
+      <div class="kpi-icon">🏭</div>
+      <div class="kpi-value">3</div>
+      <div class="kpi-label">Manufacturing Partners in India</div>
+      <div class="kpi-change">↑ Foxconn, Wistron, Pegatron</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">📦</div>
+      <div class="kpi-value">$8.5B</div>
+      <div class="kpi-label">Projected Exports 2024</div>
+      <div class="kpi-change">↑ 70% YoY growth</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">🌱</div>
+      <div class="kpi-value">PLI</div>
+      <div class="kpi-label">Government Incentive Scheme</div>
+      <div class="kpi-change">↑ ₹6,500 Cr incentive pool</div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="section-header" style="margin-bottom: 2rem;">
+    <div class="section-tag">History</div>
+    <h2 class="section-title">Apple India — Key Milestones</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content-left">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-title">Formal Market Entry</div>
+        <div class="timeline-desc">Apple officially establishes its India business. iPhone 7 becomes the first major push, targeting premium segment consumers in metros.</div>
+      </div>
+      <div class="timeline-dot">🍎</div>
+      <div class="timeline-content-right">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-title">Market Share: 1.4%</div>
+        <div class="timeline-desc">1.36 million units sold. Limited reach, high import duties making iPhones 28%+ more expensive than in the US.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content-left">
+        <div class="timeline-year">2019</div>
+        <div class="timeline-title">Local Assembly Begins</div>
+        <div class="timeline-desc">Wistron begins assembling iPhone XR in Bengaluru. Tax relief follows, reducing consumer prices.</div>
+      </div>
+      <div class="timeline-dot">🏭</div>
+      <div class="timeline-content-right">
+        <div class="timeline-year">2019</div>
+        <div class="timeline-title">First Made in India iPhone</div>
+        <div class="timeline-desc">iPhone XR becomes the first major model assembled in India. Opens door to price competitiveness in premium segment.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content-left">
+        <div class="timeline-year">2020</div>
+        <div class="timeline-title">iPhone SE — Budget Breakthrough</div>
+        <div class="timeline-desc">iPhone SE 2020 at $399 opens Apple to upper-middle-class India for the first time. 0.72M units in Q3 alone.</div>
+      </div>
+      <div class="timeline-dot">💡</div>
+      <div class="timeline-content-right">
+        <div class="timeline-year">2021</div>
+        <div class="timeline-title">PLI Scheme Launched</div>
+        <div class="timeline-desc">India's Production Linked Incentive scheme brings Foxconn and Pegatron. Jobs surge from 8K to 22K in one year.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content-left">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-title">First Apple Stores Open</div>
+        <div class="timeline-desc">Flagship stores in Mumbai's BKC and Delhi's Saket open in April 2023. Tim Cook personally inaugurates. Queues span blocks.</div>
+      </div>
+      <div class="timeline-dot">🏪</div>
+      <div class="timeline-content-right">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-title">Manufacturing Hub</div>
+        <div class="timeline-desc">40% of iPhones sold in India are assembled locally. Exports hit $8.5B. India becomes Apple's second-largest manufacturing hub.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INSIGHTS SECTION ==================== -->
+<section id="insights" style="border-top: 1px solid rgba(255,255,255,0.04); padding-top: 6rem;">
+  <div class="section-header">
+    <div class="section-tag">Data Insights</div>
+    <h2 class="section-title">What The Data Reveals</h2>
+    <p class="section-desc">Key findings from the Tableau analysis across all dimensions.</p>
+  </div>
+
+  <div class="insights-grid">
+    <div class="insight-card">
+      <div class="insight-icon" style="background: rgba(0,113,227,0.1);">📊</div>
+      <div class="insight-content">
+        <h4>Premium Paradox</h4>
+        <p>Despite high prices, iPhone demand in India surged 731% in 7 years — driven by EMI financing (now 72% of purchases) and status signalling culture.</p>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-icon" style="background: rgba(255,153,51,0.1);">🇮🇳</div>
+      <div class="insight-content">
+        <h4>Make in India Momentum</h4>
+        <p>PLI-driven local assembly reduced effective iPhone prices by 8–12%, unlocking new buyer segments previously priced out of the ecosystem.</p>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-icon" style="background: rgba(19,136,8,0.1);">🏙️</div>
+      <div class="insight-content">
+        <h4>Urban-Rural Divide</h4>
+        <p>Top 8 metro cities account for 58% of all iPhone sales. However Tier-2 cities (Pune, Ahmedabad, Jaipur) grew 3× faster in 2023–24.</p>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-icon" style="background: rgba(139,92,246,0.1);">👥</div>
+      <div class="insight-content">
+        <h4>Youth-Led Demand</h4>
+        <p>The 18–35 age group drives 68% of iPhone purchases in India. Average buyer age fell from 32 in 2017 to 25 in 2024 — the youngest globally.</p>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-icon" style="background: rgba(236,72,153,0.1);">🔄</div>
+      <div class="insight-content">
+        <h4>Trade-in Ecosystem</h4>
+        <p>iPhone trade-in rates jumped from 28% (2020) to 53% (2024) — India now has one of the most active Apple certified refurbished markets in Asia.</p>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-icon" style="background: rgba(245,158,11,0.1);">📱</div>
+      <div class="insight-content">
+        <h4>Online-First Nation</h4>
+        <p>70% of iPhone purchases in India happen online (Flipkart, Amazon, Apple.com) — a dramatic shift from 15% in 2017, accelerated by COVID-19.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TABLEAU SECTION ==================== -->
+<section style="border-top: 1px solid rgba(255,255,255,0.04); padding-top: 6rem;">
+  <div class="tableau-section">
+    <div class="section-tag">Tableau Visualizations</div>
+    <h2 class="section-title" style="margin: 1rem 0;">Interactive Dashboards</h2>
+    <p class="section-desc" style="margin-bottom: 0;">
+      This project includes 5 Tableau workbooks for in-depth interactive analysis.
+      Open in Tableau Desktop or Tableau Public for full interactivity.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+      <div class="kpi-card" style="text-align: center; padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📈</div>
+        <div style="font-weight: 600; color: var(--apple-white); font-size: 0.9rem;">Sales Trend Dashboard</div>
+        <div style="font-size: 0.75rem; color: var(--apple-silver); margin-top: 0.25rem;">dash_01_sales_trend.twbx</div>
+      </div>
+      <div class="kpi-card" style="text-align: center; padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🗺️</div>
+        <div style="font-weight: 600; color: var(--apple-white); font-size: 0.9rem;">Regional Heatmap</div>
+        <div style="font-size: 0.75rem; color: var(--apple-silver); margin-top: 0.25rem;">dash_02_regional.twbx</div>
+      </div>
+      <div class="kpi-card" style="text-align: center; padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+        <div style="font-weight: 600; color: var(--apple-white); font-size: 0.9rem;">Demographics Analysis</div>
+        <div style="font-size: 0.75rem; color: var(--apple-silver); margin-top: 0.25rem;">dash_03_demographics.twbx</div>
+      </div>
+      <div class="kpi-card" style="text-align: center; padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏭</div>
+        <div style="font-weight: 600; color: var(--apple-white); font-size: 0.9rem;">Economic Impact</div>
+        <div style="font-size: 0.75rem; color: var(--apple-silver); margin-top: 0.25rem;">dash_04_economics.twbx</div>
+      </div>
+      <div class="kpi-card" style="text-align: center; padding: 1.5rem 1rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔮</div>
+        <div style="font-weight: 600; color: var(--apple-white); font-size: 0.9rem;">Forecast 2025–2027</div>
+        <div style="font-size: 0.75rem; color: var(--apple-silver); margin-top: 0.25rem;">dash_05_forecast.twbx</div>
+      </div>
+    </div>
+
+    <a href="tableau_workbooks/irevolution_guide.html" class="btn-primary" style="margin-top: 1rem;">
+      <span>📊</span>
+      <span>View Tableau Implementation Guide</span>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-logo">i<span>Revolution</span></div>
+  <p class="footer-desc">
+    A data-driven Tableau project exploring Apple's extraordinary journey in India's smartphone market. Built with open datasets and real-world research.
+  </p>
+  <div class="footer-links">
+    <a href="index.html">Dashboard</a>
+    <a href="tableau_workbooks/irevolution_guide.html">Tableau Guide</a>
+    <a href="datasets/iphone_india_sales.csv">Download Data</a>
+    <a href="docs/methodology.html">Methodology</a>
+    <a href="README.md">README</a>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">
+    © 2024 iRevolution Project. Data sources: IDC India, Counterpoint Research, CMIE, Apple Inc. Annual Reports, Ministry of Electronics & IT (MeitY).<br/>
+    Academic use only. Not affiliated with Apple Inc.
+  </p>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
