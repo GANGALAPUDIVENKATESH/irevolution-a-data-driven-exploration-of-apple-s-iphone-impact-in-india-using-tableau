@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Methodology — iRevolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .doc-hero { padding: 120px 2rem 60px; text-align: center; }
+    .doc-content { max-width: 800px; margin: 0 auto; padding: 0 2rem 6rem; }
+    .doc-content h2 { color: var(--apple-white); font-family: var(--font-display); margin: 3rem 0 1rem; font-size: 1.8rem; }
+    .doc-content h3 { color: var(--apple-white); margin: 2rem 0 0.75rem; font-size: 1.1rem; }
+    .doc-content p { margin-bottom: 1rem; }
+    .source-list { list-style: none; padding: 0; }
+    .source-list li {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 1rem;
+      align-items: center;
+    }
+    .source-name { font-weight: 500; color: var(--apple-white); font-size: 0.9rem; }
+    .source-type { font-size: 0.75rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; }
+    th { background: rgba(255,255,255,0.05); color: var(--apple-silver); text-align: left; padding: 0.75rem 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--apple-white); font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="../index.html" class="nav-logo">
+    <span class="nav-logo-text">← Back to Dashboard</span>
+  </a>
+</nav>
+
+<div class="doc-hero">
+  <div class="section-tag">Research Methodology</div>
+  <h1 style="font-family: var(--font-display); color: var(--apple-white); margin: 1rem 0; font-size: 3rem;">
+    How We Built This
+  </h1>
+  <p style="color: var(--apple-silver); max-width: 600px; margin: 0 auto;">
+    Data sources, collection methods, analysis framework, and limitations of the iRevolution project.
+  </p>
+</div>
+
+<div class="doc-content">
+
+  <h2>📋 Research Overview</h2>
+  <p>iRevolution is a data analytics project that examines Apple's iPhone impact on the Indian smartphone market from 2017 to 2024. The project combines publicly available market research data, government reports, and Apple's financial disclosures to build a comprehensive picture of India's iPhone revolution.</p>
+
+  <h2>📊 Data Sources</h2>
+  <ul class="source-list">
+    <li>
+      <div>
+        <div class="source-name">International Data Corporation (IDC) India</div>
+        <p style="font-size: 0.82rem; margin: 0.25rem 0 0;">Quarterly smartphone tracker reports — unit shipments, market share by brand</p>
+      </div>
+      <span class="badge badge-blue">Primary</span>
+    </li>
+    <li>
+      <div>
+        <div class="source-name">Counterpoint Research India</div>
+        <p style="font-size: 0.82rem; margin: 0.25rem 0 0;">Premium segment analysis, consumer surveys, channel data</p>
+      </div>
+      <span class="badge badge-blue">Primary</span>
+    </li>
+    <li>
+      <div>
+        <div class="source-name">Apple Inc. Annual Reports (10-K)</div>
+        <p style="font-size: 0.82rem; margin: 0.25rem 0 0;">Revenue breakdowns, Greater India/APAC segment data</p>
+      </div>
+      <span class="badge badge-green">Official</span>
+    </li>
+    <li>
+      <div>
+        <div class="source-name">Ministry of Electronics & IT (MeitY)</div>
+        <p style="font-size: 0.82rem; margin: 0.25rem 0 0;">PLI scheme data, manufacturing jobs, export figures</p>
+      </div>
+      <span class="badge badge-green">Official</span>
+    </li>
+    <li>
+      <div>
+        <div class="source-name">CMIE (Centre for Monitoring Indian Economy)</div>
+        <p style="font-size: 0.82rem; margin: 0.25rem 0 0;">GDP per capita by state, income segment classifications</p>
+      </div>
+      <span class="badge badge-saffron">Secondary</span>
+    </li>
+    <li>
+      <div>
+        <div class="source-name">TRAI (Telecom Regulatory Authority of India)</div>
+        <p style="font-size: 0.82rem; margin: 0.25rem 0 0;">Internet penetration, mobile data usage statistics</p>
+      </div>
+      <span class="badge badge-saffron">Secondary</span>
+    </li>
+    <li>
+      <div>
+        <div class="source-name">CMR (CyberMedia Research)</div>
+        <p style="font-size: 0.82rem; margin: 0.25rem 0 0;">Consumer behavior surveys, satisfaction scores</p>
+      </div>
+      <span class="badge badge-saffron">Secondary</span>
+    </li>
+  </ul>
+
+  <h2>🗂️ Dataset Descriptions</h2>
+
+  <h3>iphone_india_sales.csv</h3>
+  <table>
+    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
+    <tr><td>Year</td><td>Integer</td><td>Calendar year (2017–2024)</td></tr>
+    <tr><td>Quarter</td><td>String</td><td>Q1, Q2, Q3, Q4</td></tr>
+    <tr><td>Model</td><td>String</td><td>iPhone model name</td></tr>
+    <tr><td>Units_Sold_Millions</td><td>Float</td><td>Estimated units sold in India (millions)</td></tr>
+    <tr><td>Revenue_USD_Billion</td><td>Float</td><td>Estimated revenue (USD billions)</td></tr>
+    <tr><td>Market_Share_Percent</td><td>Float</td><td>Apple's total India smartphone market share</td></tr>
+    <tr><td>Avg_Selling_Price_USD</td><td>Integer</td><td>Average selling price in USD at launch</td></tr>
+    <tr><td>Online_Sales_Percent</td><td>Integer</td><td>Percentage sold via online channels</td></tr>
+    <tr><td>Offline_Sales_Percent</td><td>Integer</td><td>Percentage sold via offline channels</td></tr>
+    <tr><td>Region</td><td>String</td><td>Indian geographic region</td></tr>
+  </table>
+
+  <h3>india_smartphone_market_share.csv</h3>
+  <p>Competitive landscape data covering 6 major brands from 2017–2024. Market share percentages are estimated based on IDC and Counterpoint quarterly reports, cross-referenced for accuracy.</p>
+
+  <h3>regional_adoption_india.csv</h3>
+  <p>State-level data for 8 major Indian states, covering iPhone user counts, penetration rates, and socioeconomic indicators. State-level iPhone data is estimated using IDC regional splits and census population figures.</p>
+
+  <h3>consumer_demographics.csv</h3>
+  <p>Synthetic dataset derived from published survey data (CMR, YouGov India) on smartphone buying patterns. Represents purchasing behavior segmented by age, income, and gender.</p>
+
+  <h3>apple_india_economic_impact.csv</h3>
+  <p>Manufacturing and economic data sourced primarily from MeitY PLI scheme reports, Apple press releases, and India EXIM bank export statistics.</p>
+
+  <h2>⚠️ Limitations & Caveats</h2>
+  <div class="card" style="margin: 1rem 0;">
+    <p>1. <strong>Estimated Data:</strong> iPhone-specific unit sales in India are not officially disclosed by Apple. All figures are market research estimates with ±15% confidence intervals.</p>
+    <p>2. <strong>Regional Splits:</strong> State-level breakdowns are interpolated from regional (North/South/East/West) IDC data using population and GDP weighting.</p>
+    <p>3. <strong>Currency:</strong> All USD figures use 2024 average exchange rates (1 USD = ₹83.5) for historical comparison. Actual purchasing power may differ.</p>
+    <p>4. <strong>Market Share:</strong> Total smartphone market figures include feature phones in some analyst definitions; premium segment share differs from overall share.</p>
+    <p style="margin-bottom: 0;">5. <strong>Academic Use:</strong> This project is for educational and data visualization practice only. Not intended for commercial decision-making.</p>
+  </div>
+
+  <h2>📏 Analysis Framework</h2>
+  <p>The project follows a structured analysis approach:</p>
+  <div class="card" style="margin: 1rem 0 2rem;">
+    <p><strong>1. Trend Analysis:</strong> Time-series decomposition of quarterly sales data to identify seasonality, growth rates, and structural breaks (COVID-19, PLI scheme).</p>
+    <p><strong>2. Geographic Analysis:</strong> Choropleth mapping of penetration rates against socioeconomic indicators (GDP per capita, urbanization, internet access).</p>
+    <p><strong>3. Demographic Segmentation:</strong> Cross-tabulation of buyer characteristics to identify primary and emerging customer segments.</p>
+    <p><strong>4. Economic Attribution:</strong> Measurement of Apple's contribution to manufacturing jobs and export revenue using MeitY's PLI reporting framework.</p>
+    <p style="margin-bottom: 0;"><strong>5. Forecasting:</strong> Tableau's built-in exponential smoothing model applied to historical sales data for 2025–2027 projections.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="../index.html" class="btn-primary">← Back to Dashboard</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <p class="footer-copy">iRevolution · Methodology Documentation · Academic Use Only</p>
+</footer>
+</body>
+</html>
