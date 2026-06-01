@@ -1,4 +1,4 @@
-# 🍎 iRevolution
+
 ## A Data-Driven Exploration of Apple's iPhone Impact in India Using Tableau
 
 > **Academic Data Analytics Project | 2017–2024**
