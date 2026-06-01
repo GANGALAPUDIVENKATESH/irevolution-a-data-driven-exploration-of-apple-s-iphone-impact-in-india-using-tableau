@@ -148,6 +148,8 @@ Key economic metrics: manufacturing jobs, export revenue, Apple Stores, service 
 
 ---
 
+![image alt](https://github.com/GANGALAPUDIVENKATESH/irevolution-a-data-driven-exploration-of-apple-s-iphone-impact-in-india-using-tableau/blob/32260480dd20664252db492c153d5acea61b4afc/Screenshot%202026-05-31%20225008.png)
+
 ## 📄 License
 
 MIT License — Free to use for academic and educational purposes.
