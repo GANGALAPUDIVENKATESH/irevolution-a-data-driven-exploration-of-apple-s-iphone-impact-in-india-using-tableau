@@ -1,0 +1,46 @@
+State,Region,Year,iPhone_Users_Thousands,Penetration_Rate_Percent,GDP_Per_Capita_USD,Urban_Population_Percent,Internet_Users_Percent,Avg_Age_iPhoneUser
+Maharashtra,West,2020,1850,3.2,2850,45.2,68.5,28
+Maharashtra,West,2021,2340,4.0,3050,46.1,72.3,27
+Maharashtra,West,2022,3120,5.3,3280,47.0,76.8,26
+Maharashtra,West,2023,4280,7.1,3520,47.9,81.2,25
+Maharashtra,West,2024,5650,9.2,3800,48.8,85.6,25
+Karnataka,South,2020,1420,2.8,2650,38.6,65.2,27
+Karnataka,South,2021,1890,3.7,2850,39.5,69.8,26
+Karnataka,South,2022,2560,4.9,3080,40.4,74.3,25
+Karnataka,South,2023,3450,6.5,3320,41.3,79.1,24
+Karnataka,South,2024,4580,8.5,3580,42.2,83.7,24
+Delhi,North,2020,1680,3.5,4200,97.5,72.3,26
+Delhi,North,2021,2180,4.5,4500,97.8,76.5,25
+Delhi,North,2022,2890,5.9,4850,98.1,80.8,24
+Delhi,North,2023,3820,7.8,5250,98.4,85.2,23
+Delhi,North,2024,4950,10.1,5680,98.7,89.6,22
+Tamil Nadu,South,2020,1280,2.5,2480,48.4,63.8,28
+Tamil Nadu,South,2021,1650,3.2,2670,49.3,68.1,27
+Tamil Nadu,South,2022,2210,4.2,2890,50.2,72.5,26
+Tamil Nadu,South,2023,2960,5.6,3120,51.1,77.2,25
+Tamil Nadu,South,2024,3850,7.2,3380,52.0,82.0,25
+Gujarat,West,2020,980,2.1,2580,42.6,61.2,29
+Gujarat,West,2021,1280,2.7,2780,43.5,65.8,28
+Gujarat,West,2022,1720,3.6,3010,44.4,70.4,27
+Gujarat,West,2023,2340,4.9,3260,45.3,75.1,26
+Gujarat,West,2024,3120,6.4,3530,46.2,79.8,25
+West Bengal,East,2020,820,1.8,1850,31.9,55.6,30
+West Bengal,East,2021,1080,2.3,1990,32.8,59.8,29
+West Bengal,East,2022,1450,3.1,2150,33.7,64.2,28
+West Bengal,East,2023,1980,4.2,2320,34.6,68.9,27
+West Bengal,East,2024,2640,5.6,2510,35.5,73.6,26
+Telangana,South,2020,760,2.2,2350,39.8,62.4,27
+Telangana,South,2021,1020,2.9,2540,40.7,66.9,26
+Telangana,South,2022,1380,3.9,2750,41.6,71.5,25
+Telangana,South,2023,1890,5.2,2980,42.5,76.3,24
+Telangana,South,2024,2520,6.8,3230,43.4,81.2,23
+Rajasthan,North,2020,520,1.2,1620,24.9,48.2,31
+Rajasthan,North,2021,680,1.6,1750,25.8,52.4,30
+Rajasthan,North,2022,920,2.1,1890,26.7,56.8,29
+Rajasthan,North,2023,1250,2.9,2050,27.6,61.5,28
+Rajasthan,North,2024,1680,3.8,2220,28.5,66.3,27
+Uttar Pradesh,North,2020,1120,1.1,1380,22.3,44.8,32
+Uttar Pradesh,North,2021,1480,1.4,1490,23.2,48.9,31
+Uttar Pradesh,North,2022,1990,1.9,1610,24.1,53.2,30
+Uttar Pradesh,North,2023,2720,2.6,1740,25.0,57.8,29
+Uttar Pradesh,North,2024,3650,3.4,1890,25.9,62.5,28

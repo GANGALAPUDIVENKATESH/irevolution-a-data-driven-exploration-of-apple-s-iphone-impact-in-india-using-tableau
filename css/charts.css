@@ -1,0 +1,190 @@
+/* =============================================
+   iRevolution - Charts & Visualization Styles
+   ============================================= */
+
+/* === Chart.js Overrides === */
+.chartjs-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+/* === Sparkline Charts === */
+.sparkline-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 50px;
+}
+
+.sparkline-bar {
+  flex: 1;
+  background: var(--gradient-blue);
+  border-radius: 2px 2px 0 0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  min-height: 4px;
+}
+
+.sparkline-bar:hover { opacity: 1; }
+
+/* === Progress Ring === */
+.progress-ring-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ring-item {
+  text-align: center;
+}
+
+.ring-label {
+  font-size: 0.8rem;
+  color: var(--apple-silver);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === Heatmap === */
+.heatmap-grid {
+  display: grid;
+  gap: 3px;
+}
+
+.heatmap-cell {
+  border-radius: 3px;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.heatmap-cell:hover { opacity: 0.8; transform: scale(1.1); }
+
+/* === Treemap === */
+.treemap-container {
+  display: grid;
+  gap: 4px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.treemap-cell {
+  border-radius: 6px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.treemap-cell:hover { filter: brightness(1.15); }
+
+.treemap-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  z-index: 1;
+}
+
+.treemap-value {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.6);
+  z-index: 1;
+}
+
+/* === Gauge === */
+.gauge-container {
+  position: relative;
+  width: 180px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+/* === Line Chart Custom === */
+.line-chart-container {
+  padding: 1rem 0;
+}
+
+/* === Stat Comparison === */
+.comparison-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.comp-label {
+  font-size: 0.8rem;
+  color: var(--apple-silver);
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.comp-bar-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comp-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.comp-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.comp-val {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--apple-white);
+  width: 50px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* === Tooltip === */
+.chart-tooltip {
+  position: absolute;
+  background: rgba(29, 29, 31, 0.95);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  color: var(--apple-white);
+  pointer-events: none;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  white-space: nowrap;
+}
+
+.tooltip-label {
+  color: var(--apple-silver);
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.tooltip-value {
+  font-weight: 600;
+  font-size: 1rem;
+}
